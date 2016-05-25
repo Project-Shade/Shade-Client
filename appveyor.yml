@@ -1,0 +1,36 @@
+version: 1.0.{build}
+environment:
+  nodejs_version: "6.1.0"
+  SIGN_CERT_PASS:
+    secure: UEVPxVtsn5UnAi3PhhkUSA==
+
+branches:
+  except:
+  - website
+
+platform:
+  - x64
+
+cache:
+  - node_modules
+  - '%USERPROFILE%\.electron'
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm i -g npm
+  - rd /S /Q "node_modules"
+  - npm cache clean
+  - npm install
+
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm test
+
+build_script:
+- cmd: npm run make:win
+
+artifacts:
+  - path: 'dist\installers\win32\ShadeSetup.exe'
