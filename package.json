@@ -43,7 +43,7 @@
   "license": "MIT",
   "dependencies": {
     "auto-launch": "^2.0.1",
-    "electron-prebuilt": "1.1.1",
+    "electron-prebuilt": "1.2.1",
     "filesize": "^3.3.0",
     "localforage": "^1.4.2",
     "lodash": "^4.12.0",
@@ -69,6 +69,7 @@
     "chai": "^3.5.0",
     "chai-fs": "^0.1.0",
     "devtron": "^1.0.1",
+    "electron-devtools-installer": "^1.0.1",
     "electron-mocha": "^1.2.3",
     "electron-packager": "^7.0.1",
     "electron-rebuild": "^1.1.4",
